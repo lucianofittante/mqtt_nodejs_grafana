@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data monitoring Greenhouse</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>MONITORING</h1>
+        <p>Visualization</p>
+        <hr>
+        <section class="cols-2">
+            <figure>
+                <h2>Current Values</h2>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td><strong>Temperature:</strong> <span id="temperature"></span>°C</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Humidity:</strong> <span id="humidity"></span>%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Humidity Soil:</strong> <span id="humedadsuelo"></span>%</td>
+                        </tr>
+                        <tr>
+                            <td><p><a href="#" onclick="toggleRegar()"><button class="Button ButtonG">Regar</button></a></p></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Water:</strong> <div id="regar"></div></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Watering alarm:</strong> <div id="alarmariego"></div></td>
+                        </tr>
+                        <tr>
+                            <td><strong>TIME:</strong> <div id="current_time"></div></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </figure>
+            
+            <figure>
+                <h2>LOGS</h2>
+                <div id="logs"></div>
+            </figure>
+        </section>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>

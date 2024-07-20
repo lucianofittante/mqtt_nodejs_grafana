@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ESP32 DESDE SPIFFS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="left-container">
+            <h1>VALORES</h1>
+            <table>
+                <tbody>
+                    <tr>
+                        <td><strong>Temperatura:</strong> <span id="temperature"></span>°C</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Humedad Amb:</strong> <span id="humidity"></span>%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Humedad Suelo:</strong> <span id="humedadsuelo"></span>%</td>
+                    </tr>
+                    <tr>
+                        <td><p><a href="#" onclick="toggleRegar()"><button class="Button ButtonG">Regar</button></a></p></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Regando:</strong> <div id="regar"></div></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Alarma riego:</strong> <div id="alarmariego"></div></td>
+                    </tr>
+                    <tr>
+                        <td><strong>TIEMPO:</strong> <div id="current_time"></div></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="right-container">
+            <h2>Diario</h2>
+            <select id="chartSelector" onchange="updateChartVisibility()">
+                <option value="temperature">Temperature</option>
+                <option value="humidity">Humidity</option>
+                <option value="humidityLand">Soil Humidity</option>
+            </select>
+            <div class="chart-container">
+                <canvas id="temperatureChart" width="400" height="350"></canvas>
+                <canvas id="humidityChart" width="400" height="350" style="display:none;"></canvas>
+                <canvas id="humidityLandChart" width="400" height="350" style="display:none;"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="full-chart-container">
+        <h2>Historico 4 dias</h2>
+        <canvas id="fullDataChart" width="600" height="200"></canvas>
+    </div>
+    <script src="code.js"></script>
+    <script>
+        function updateChartVisibility() {
+            const temperatureChart = document.getElementById('temperatureChart');
+            const humidityChart = document.getElementById('humidityChart');
+            const humidityLandChart = document.getElementById('humidityLandChart');
+            const selectedChart = document.getElementById('chartSelector').value;
+
+            temperatureChart.style.display = 'none';
+            humidityChart.style.display = 'none';
+            humidityLandChart.style.display = 'none';
+
+            switch (selectedChart) {
+                case 'temperature':
+                    temperatureChart.style.display = 'block';
+                    break;
+                case 'humidity':
+                    humidityChart.style.display = 'block';
+                    break;
+                case 'humidityLand':
+                    humidityLandChart.style.display = 'block';
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>
