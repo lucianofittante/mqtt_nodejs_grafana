@@ -1,8 +1,8 @@
-# Install script for directory: C:/Users/lucho/Desktop/Proyectos_ESP_en_C/mqtt_nodejs_grafana/managed_components/espressif__mdns
+# Install script for directory: C:/Users/lucho/Desktop/mqtt_grafana/mqtt_nodejs_grafana/components/espressif__mdns
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/project-name")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/mqtt_nodejs_grafana")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

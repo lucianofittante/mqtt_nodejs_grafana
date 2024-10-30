@@ -1,4 +1,4 @@
-/* * Data converted from C:/Users/lucho/Desktop/Proyectos_ESP_en_C/mqtt_nodejs_grafana/build/esp-idf/mbedtls/x509_crt_bundle
+/* * Data converted from C:/Users/lucho/Desktop/mqtt_grafana/mqtt_nodejs_grafana/build/esp-idf/mbedtls/x509_crt_bundle
  */
 .data
 .section .rodata.embedded

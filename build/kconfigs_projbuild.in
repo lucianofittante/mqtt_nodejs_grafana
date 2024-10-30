@@ -3,4 +3,4 @@ source "C:/ESP/Espressif/frameworks/esp-idf-v5.1.2/components/esp_app_format/Kco
 source "C:/ESP/Espressif/frameworks/esp-idf-v5.1.2/components/esp_rom/Kconfig.projbuild"
 source "C:/ESP/Espressif/frameworks/esp-idf-v5.1.2/components/esptool_py/Kconfig.projbuild"
 source "C:/ESP/Espressif/frameworks/esp-idf-v5.1.2/components/partition_table/Kconfig.projbuild"
-source "C:/Users/lucho/Desktop/Proyectos_ESP_en_C/mqtt_nodejs_grafana/main/Kconfig.projbuild"
+source "C:/Users/lucho/Desktop/mqtt_grafana/mqtt_nodejs_grafana/main/Kconfig.projbuild"
