@@ -1,7 +1,7 @@
 {
     "version":            "1",
     "project_name":       "mqtt_nodejs_grafana",
-    "project_version":    "7cce5a6-dirty",
+    "project_version":    "7d768cb-dirty",
     "project_path":       "C:/Users/lucho/Desktop/mqtt_grafana/mqtt_nodejs_grafana",
     "idf_path":           "C:/ESP/Espressif/frameworks/esp-idf-v5.1.2",
     "build_dir":          "C:/Users/lucho/Desktop/mqtt_grafana/mqtt_nodejs_grafana/build",

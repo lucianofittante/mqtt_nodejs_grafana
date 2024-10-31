@@ -129,12 +129,17 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
     int msg_id;
     switch ((esp_mqtt_event_id_t)event_id) {
     case MQTT_EVENT_CONNECTED:
-        ESP_LOGI(TAGMQTT, "MQTT_EVENT_CONNECTED");
+    ESP_LOGI(TAGMQTT, "MQTT_EVENT_CONNECTED");
 
-        msg_id = esp_mqtt_client_subscribe(client, "/emqx/recive", 0);
-        ESP_LOGI(TAGMQTT, "sent subscribe successful, msg_id=%d", msg_id);
-       
-        break;
+    esp_mqtt_client_subscribe(client, "temperaturelucho", 0);
+    esp_mqtt_client_subscribe(client, "humiditylucho", 0);
+    esp_mqtt_client_subscribe(client, "regar", 0);
+    esp_mqtt_client_subscribe(client, "alarmariego", 0);
+    esp_mqtt_client_subscribe(client, "humedadsuelo", 0);
+    esp_mqtt_client_subscribe(client, "current_tiempo", 0);
+    
+    ESP_LOGI(TAGMQTT, "Subscribed to all topics");
+    break;
     case MQTT_EVENT_DISCONNECTED:                           
         ESP_LOGI(TAGMQTT, "MQTT_EVENT_DISCONNECTED");
         break;
@@ -199,12 +204,12 @@ void publish_sensor_state(esp_mqtt_client_handle_t client) {
     memset(mqtt_logs, 0, sizeof(mqtt_logs));
 
     snprintf(message, sizeof(message), "%d", humidity);
-    msg_id = esp_mqtt_client_publish(client, "humidity", message, 0, 0, 0);
+    msg_id = esp_mqtt_client_publish(client, "humiditylucho", message, 0, 0, 0);
     snprintf(log_entry, sizeof(log_entry), "I (%ld) INFO_MQTT: sent publish humidity, msg_id=%d<br>", esp_log_timestamp(), msg_id);
     strncat(mqtt_logs, log_entry, sizeof(mqtt_logs) - strlen(mqtt_logs) - 1);
 
     snprintf(message, sizeof(message), "%d", temperature);
-    msg_id = esp_mqtt_client_publish(client, "temperature", message, 0, 0, 0);
+    msg_id = esp_mqtt_client_publish(client, "temperaturelucho", message, 0, 0, 0);
     snprintf(log_entry, sizeof(log_entry), "I (%ld) INFO_MQTT: sent publish temperature, msg_id=%d<br>", esp_log_timestamp(), msg_id);
     strncat(mqtt_logs, log_entry, sizeof(mqtt_logs) - strlen(mqtt_logs) - 1);
 
